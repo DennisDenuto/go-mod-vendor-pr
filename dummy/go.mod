@@ -1,4 +1,4 @@
-module github.com/sue445/go-mod-tidy-pr-action/dummy
+module github.com/DennisDenuto/go-mod-vendor-pr-action/dummy
 
 go 1.13
 
