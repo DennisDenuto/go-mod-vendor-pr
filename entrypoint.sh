@@ -30,6 +30,7 @@ export PATH="/go/bin:/usr/local/go/bin:$PATH"
 cd $GO_MOD_DIRCTORY
 
 go mod vendor -v
+git add ./vendor
 
 if [ $(git status | grep "nothing to commit, working tree clean" | wc -l) = "1" ]; then
   echo "go.sum is not updated"
