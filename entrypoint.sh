@@ -29,6 +29,7 @@ export PATH="/go/bin:/usr/local/go/bin:$PATH"
 
 cd $GO_MOD_DIRCTORY
 
+go mod tidy
 go mod vendor -v
 
 if [ $(git status | grep "nothing to commit, working tree clean" | wc -l) = "1" ]; then
