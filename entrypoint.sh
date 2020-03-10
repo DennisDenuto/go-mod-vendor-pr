@@ -30,12 +30,13 @@ export PATH="/go/bin:/usr/local/go/bin:$PATH"
 cd $GO_MOD_DIRCTORY
 
 go mod vendor -v
-git add ./vendor
 
 if [ $(git status | grep "nothing to commit, working tree clean" | wc -l) = "1" ]; then
-  echo "go.sum is not updated"
+  echo "your vendor dir is not updated"
   exit 0
 fi
+
+git add ./vendor
 
 if [ -z "$DUPLICATE" ]; then
   if [ $(hub pr list | grep "${PR_TITLE_PREFIX}" | wc -l ) != "0" ]; then
