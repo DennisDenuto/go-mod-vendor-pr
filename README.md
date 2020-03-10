@@ -1,28 +1,28 @@
-# go-vendor-vendor-pr
-Run `go vendor  and create PullRequest on GitHub Actions
+# go-mod-vendor-vendor-pr
+Run `go mod vendor  and create PullRequest on GitHub Actions
 
-https://github.com/marketplace/actions/go-vendor-pr
+https://github.com/marketplace/actions/go-mod-vendor-pr
 
 ## Usage
 ```yaml
-# .github/workflows/go-vendor-pr.yml
-name: go-vendor-pr
+# .github/workflows/go-mod-vendor-pr.yml
+name: go-mod-vendor-pr
 
 on:
   schedule:
     - cron: "0 0 * * 1" # Weekly build
 
 jobs:
-  go-vendor-pr:
-    name: go-vendor-pr
+  go-mod-vendor-pr:
+    name: go-mod-vendor-pr
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run go-vendor-pr
-        uses: sue445/go-vendor-pr@master
+      - name: Run go-mod-vendor-pr
+        uses: DennisDenuto/go-mod-vendor-pr@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           git_user_name: GitHub Actions
